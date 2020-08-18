@@ -1,5 +1,6 @@
 <?php namespace RobbieP\CloudConvertLaravel;
 
+use Illuminate\Support\Arr;
 
 class Config {
 
@@ -20,7 +21,7 @@ class Config {
     public function get($key)
     {
         if(! is_array($this->config) ) return null;
-        return array_get($this->config, $key, null);
+        return Arr::get($this->config, $key, null);
     }
 
     public function toArray()
